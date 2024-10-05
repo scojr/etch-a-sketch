@@ -1,27 +1,31 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
-
-.container {
-    margin-top: 20vh;
+body {
+    margin-top: 20px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    flex: 1, 1, 100%;
 }
-
-
-.square {
-    background-color: black;
-    width: 32px;
-    height: 32px;
-    margin: 1px;
+.container {
+    margin: 20px;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column;
+    width: 810px;
+    height: 810px;
+    border: 10px solid black;
 }
 
 .row {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.square {
+    background-color: rgb(255, 255, 255);
+    flex: 1 0 0%;
 }
