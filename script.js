@@ -1,8 +1,9 @@
 const container = document.querySelector(".container");
-drawGrid(16,16);
-
+let resolution = 32;
+drawGrid(resolution);
 
 function drawGrid(size) {
+    clearGrid()
     for (i = 0; i < size; i++) {
         let row = document.createElement("div");
         row.className = ("row");
@@ -16,18 +17,26 @@ function drawGrid(size) {
     }
 }
 
+function clearGrid() {
+    while (container.firstChild) {
+        container.firstChild.remove();
+    }
+}
+
 const gridButton = document.querySelector("#gridButton");
 gridButton.addEventListener("click", function newGrid() { 
     let newSize = parseInt(prompt("Enter New Grid Resolution (Up to 100):"));
     if (newSize <= 100) {
-        while (container.firstChild) {
-            container.firstChild.remove();
-        }
-        drawGrid(newSize);
+        resolution = newSize;
+        drawGrid(resolution);
+        gridButton.textContent = (`Grid Resolution -  ${resolution} x ${resolution}`);
     } else {
         alert("Please enter a valid integer under 100")
     }
     });
+
+const clearButton = document.querySelector("#clearButton");
+clearButton.addEventListener("click", () => drawGrid(resolution));
 
 let isMouseDown = false;
 
