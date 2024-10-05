@@ -9,7 +9,7 @@ function drawGrid(size) {
         for(j = 0; j < size; j++) {
             let square = document.createElement("div")
             square.className = ("square");
-            square.addEventListener("mouseover", function mouseOver(){square.style.backgroundColor = ("black");});
+            square.addEventListener("mouseover", draw);
             row.appendChild(square);
         }
         container.appendChild(row);
@@ -29,3 +29,21 @@ gridButton.addEventListener("click", function newGrid() {
     }
     });
 
+let isMouseDown = false;
+
+const body = document.querySelector("body")
+
+body.addEventListener("mousedown", function mouseDown(e) {
+    isMouseDown = true;
+    e.preventDefault();
+});
+body.addEventListener("mouseup", function mouseUp(e) {
+    isMouseDown = false;
+    e.preventDefault();
+});
+
+function draw(event){
+    if (isMouseDown) {
+    event.target.style.backgroundColor = ("black");
+    }
+};
