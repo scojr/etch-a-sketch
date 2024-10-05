@@ -1,4 +1,6 @@
 const container = document.querySelector(".container");
+const colorPicker = document.querySelector("#colorButton");
+let penColor = colorPicker.value;
 let resolution = 32;
 drawGrid(resolution);
 
@@ -10,6 +12,7 @@ function drawGrid(size) {
         for(j = 0; j < size; j++) {
             let square = document.createElement("div")
             square.className = ("square");
+            square.addEventListener("mousedown", draw);
             square.addEventListener("mouseover", draw);
             row.appendChild(square);
         }
@@ -46,13 +49,22 @@ body.addEventListener("mousedown", function mouseDown(e) {
     isMouseDown = true;
     e.preventDefault();
 });
+
 body.addEventListener("mouseup", function mouseUp(e) {
     isMouseDown = false;
     e.preventDefault();
 });
 
+
 function draw(event){
-    if (isMouseDown) {
-    event.target.style.backgroundColor = ("black");
+    if (event.type === "mousedown") {
+        penColor = colorPicker.value;
+        event.target.style.backgroundColor = (penColor);
+        event.preventDefault();
+    }
+    if (event.type === "mouseover" && isMouseDown) {
+        penColor = colorPicker.value;
+        event.target.style.backgroundColor = (penColor);
+        event.preventDefault();
     }
 };
