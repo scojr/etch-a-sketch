@@ -9,9 +9,13 @@ function drawGrid(height, width) {
         for(j = 0; j < width; j++) {
             let square = document.createElement("div")
             square.className = ("square");
+            square.addEventListener("mouseover", function mouseOver(){square.style.backgroundColor = ("blue");});
             row.appendChild(square);
         }
         container.appendChild(row);
     }
         
 }
+
+
+

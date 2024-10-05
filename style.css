@@ -1,4 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
+    margin-top: 20vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -10,8 +15,9 @@
 
 .square {
     background-color: black;
-    margin: 8px;
-    padding: 16px;
+    width: 32px;
+    height: 32px;
+    margin: 1px;
 }
 
 .row {
