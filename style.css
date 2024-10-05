@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1, 1, 100%;
+}
+
+
+.square {
+    background-color: black;
+    margin: 8px;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
