@@ -3,6 +3,7 @@
     margin: 0;
 }
 body {
+    font-family:Arial, Helvetica, sans-serif;
     margin-top: 20px;
     display: flex;
     flex-flow: column;
@@ -28,4 +29,26 @@ body {
 .square {
     background-color: rgb(255, 255, 255);
     flex: 1 0 0%;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button {
+    background-color: #ffa365;
+    color: white;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0px 2px 6px 1px grey;
+    height: 40px;
+    font-size: large;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #da8954;
 }

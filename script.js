@@ -38,8 +38,24 @@ gridButton.addEventListener("click", function newGrid() {
     }
     });
 
+    
 const clearButton = document.querySelector("#clearButton");
 clearButton.addEventListener("click", () => drawGrid(resolution));
+
+let toggle = true;
+const guidelineButton = document.querySelector("#guidelineButton");
+guidelineButton.addEventListener("click", function toggleGuidelines() {
+    const squares = document.querySelectorAll(".square");
+    console.log(toggle);
+    for (i = 0; i < squares.length; i++) {
+        if (toggle) {
+            squares[i].style.border = "1px solid Gainsboro";
+        } else {
+            squares[i].style.border = "0";
+        }
+    }
+    toggle = !toggle;
+});
 
 let isMouseDown = false;
 
